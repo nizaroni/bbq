@@ -1,5 +1,13 @@
 <h1>Add a new BBQ</h1>
 
+<% if @bbq.errors.any? %>
+  <ul class="list-unstyled">
+    <% @bbq.errors.full_messages.each do |msg| %>
+      <li class="alert alert-danger" role="alert"><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @bbq do |form| %>
   <div class="form-group">
     <%= form.label :title %>
