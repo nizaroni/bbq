@@ -7,7 +7,11 @@
 <ul class="list-unstyled">
   <% @barbecues.each do |bbq| %>
     <li data-bbq="<%= bbq.id %>">
-      <h2><%= bbq.title %></h2>
+      <h2>
+        <a href="<%= barbecue_path(bbq.id) %>">
+          <%= bbq.title %>
+        </a>
+      </h2>
 
       <dl>
         <dt>Date:</dt>
