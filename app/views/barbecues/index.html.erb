@@ -1,0 +1,15 @@
+<h1>BBQs</h1>
+
+<ul>
+  <% @barbecues.each do |bbq| %>
+    <li>
+      <h2><%= bbq.title %></h2>
+      <dl>
+        <dt>Date:</dt>
+        <dd><%= format_date(bbq.date) %></dd>
+        <dt>Venue:</dt>
+        <dd><%= bbq.venue %></dd>
+      </dl>
+    </li>
+  <% end %>
+</ul>
