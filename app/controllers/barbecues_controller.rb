@@ -1,6 +1,6 @@
 class BarbecuesController < ApplicationController
   def index
-    @barbecues = Barbecue.all
+    @barbecues = Barbecue.order(:date)
   end
 
   def new
