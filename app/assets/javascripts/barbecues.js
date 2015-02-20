@@ -41,17 +41,17 @@
     })
 
     request.done(function (bbq) {
+      var bbqMoment = moment(bbq.date)
       var htmlParts = [
         '<h2>' + bbq.title + '</h2>',
         '<dl>',
         '  <dt>Date:</dt>',
-        '  <dd>' + bbq.date + '</dd>',
+        '  <dd>' + bbqMoment.format('MMMM, D YYYY [at] h:mm a') + '</dd>',
         '  <dt>Venue:</dt>',
         '  <dd>' + bbq.venue + '</dd>',
         '</dl>'
       ]
       $bbqContainer.append(htmlParts.join('\n'))
     })
-
   }
 })()
