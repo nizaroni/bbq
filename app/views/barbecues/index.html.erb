@@ -6,14 +6,20 @@
 
 <ul class="list-unstyled">
   <% @barbecues.each do |bbq| %>
-    <li>
+    <li data-bbq="<%= bbq.id %>">
       <h2><%= bbq.title %></h2>
+
       <dl>
         <dt>Date:</dt>
         <dd><%= format_date(bbq.date) %></dd>
         <dt>Venue:</dt>
         <dd><%= bbq.venue %></dd>
       </dl>
+
+      <button class="btn btn-success" data-hook="join-bbq">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        Join <%= bbq.title %>
+      </button>
     </li>
   <% end %>
 </ul>
