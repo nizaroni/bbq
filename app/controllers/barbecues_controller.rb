@@ -3,6 +3,11 @@ class BarbecuesController < ApplicationController
     @barbecues = Barbecue.order(:date)
   end
 
+  def show
+    # Don't add any code to this show action.
+    # Implement your barbecue API in another action.
+  end
+
   def new
     @bbq = Barbecue.new
   end
