@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', defer: true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body data-hook="controller-<%= controller_name %> action-<%= action_name %>">
 
   <div class="container">
     <%= yield %>

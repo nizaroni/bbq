@@ -25,4 +25,33 @@
       isJoining = false
     })
   })
+
+  if ($('[data-hook~=controller-barbecues][data-hook~=action-show]').length) {
+    var $bbqContainer = $('[data-hook=bbq-info]')
+    var bbqId = $bbqContainer.data('bbq')
+    var request = $.get('/api/barbecues/' + bbqId)
+
+    request.fail(function () {
+      var htmlParts = [
+        '<div class="alert alert-danger" role="alert">',
+        '  There was a problem retrieving the BBQ info. Try again later.',
+        '</div>'
+      ]
+      $bbqContainer.append(htmlParts.join('\n'))
+    })
+
+    request.done(function (bbq) {
+      var htmlParts = [
+        '<h2>' + bbq.title + '</h2>',
+        '<dl>',
+        '  <dt>Date:</dt>',
+        '  <dd>' + bbq.date + '</dd>',
+        '  <dt>Venue:</dt>',
+        '  <dd>' + bbq.venue + '</dd>',
+        '</dl>'
+      ]
+      $bbqContainer.append(htmlParts.join('\n'))
+    })
+
+  }
 })()
