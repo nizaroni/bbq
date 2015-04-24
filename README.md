@@ -38,3 +38,15 @@ where `:id` is a placeholder for a barbecue's ID.
 
 Task #3: Allow users to join a BBQ
 ----------------------------------
+
+On the home page you might have noticed that each BBQ has a *Join* button.
+If you try to click that button, you will get an error.
+That button also attempts to use of an API call to add the user to the BBQ.
+
+1. Add an association to `Barbecue` for the users who are going to the BBQ.
+2. Create a route that responds to POST requests on URLs like
+`/api/barbecues/:id/join`,
+where `:id` is a placeholder for a barbecue's ID.
+3. The API needs to add the logged-in user to the selected BBQ's association.
+4. The API should also respond with JSON
+indicating whether or not the call was successful.
